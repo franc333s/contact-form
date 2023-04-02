@@ -1,0 +1,88 @@
+@charset "UTF-8";
+.contact-form [type=email],
+.contact-form [type=text],
+#name-contact-form,
+#email-contact-form {
+  color: #0F0F0F;
+  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
+  background: none;
+  border: 2px solid #0F0F0F;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  margin-top: 0rem;
+  margin-bottom: 2.8rem;
+  padding: 1.4rem 0;
+  width: 100%;
+}
+.contact-form [type=email]:focus,
+.contact-form [type=text]:focus,
+#name-contact-form:focus,
+#email-contact-form:focus {
+  background-color: transparent;
+  color: #0F0F0F;
+  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+  outline: none;
+}
+.contact-form [type=email]::-webkit-input-placeholder, .contact-form [type=text]::-webkit-input-placeholder, #name-contact-form::-webkit-input-placeholder, #email-contact-form::-webkit-input-placeholder {
+  color: #0F0F0F;
+  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+}
+.contact-form [type=email]::-moz-placeholder, .contact-form [type=text]::-moz-placeholder, #name-contact-form::-moz-placeholder, #email-contact-form::-moz-placeholder {
+  color: #0F0F0F;
+  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+}
+.contact-form [type=email]:-ms-input-placeholder, .contact-form [type=text]:-ms-input-placeholder, #name-contact-form:-ms-input-placeholder, #email-contact-form:-ms-input-placeholder {
+  color: #0F0F0F;
+  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+}
+.contact-form [type=email]::-ms-input-placeholder, .contact-form [type=text]::-ms-input-placeholder, #name-contact-form::-ms-input-placeholder, #email-contact-form::-ms-input-placeholder {
+  color: #0F0F0F;
+  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+}
+.contact-form [type=email]::placeholder,
+.contact-form [type=text]::placeholder,
+#name-contact-form::placeholder,
+#email-contact-form::placeholder {
+  color: #0F0F0F;
+  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+}
+.contact-form [type=email]:-ms-input-placeholder,
+.contact-form [type=text]:-ms-input-placeholder,
+#name-contact-form:-ms-input-placeholder,
+#email-contact-form:-ms-input-placeholder {
+  color: #0F0F0F;
+  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+}
+@media all and (min-width: 90rem) {
+  .contact-form [type=email],
+.contact-form [type=text],
+#name-contact-form,
+#email-contact-form {
+    padding-top: 4rem;
+  }
+}
+
+.contact-form [placeholder="¿QUÉ NOS CUENTAS?"],
+#text-contact-form {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
+}
+
+@media all and (min-width: 48rem) {
+  .contact-form__name-email > p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 4rem;
+  }
+}

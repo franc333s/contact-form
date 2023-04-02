@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-secondary;
+    background-color: $color-bg-white;
+    color: $color-black;
+    margin: 0;
+    overflow-x: hidden;
+}

@@ -1,0 +1,71 @@
+@mixin mq($bp: $bp-medium, $bp-width: min-width) {
+    @media all and ($bp-width: $bp) {
+        @content;
+    }
+}
+
+
+
+// Contant form
+
+.contact-form [type="email"],
+.contact-form [type="text"],
+#name-contact-form,
+#email-contact-form {
+    color: $color-black;
+    font-family: $font-secondary;
+	background: none;
+    border: 2px solid $color-black;
+	border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+	// -webkit-appearance: none;
+	// -moz-appearance: none;
+	// appearance: none;
+    margin-top: 0rem;
+    margin-bottom: 2.8rem;
+    padding: 1.4rem 0;
+    width: 100%;
+
+    &:focus {
+        background-color: transparent;
+        color: $color-black;
+        font-family: $font-secondary;
+        font-size: $font-size-small;
+        outline: none;
+    }
+
+    &::placeholder {
+        color: $color-black;
+        font-family: $font-secondary;
+        font-size: $font-size-small;
+    }
+    &:-ms-input-placeholder {
+        color: $color-black;
+        font-family: $font-secondary;
+        font-size: $font-size-small;
+    }
+
+    @include mq($bp-large) {
+        //min width 1440px
+        padding-top: 4rem;
+
+    }
+}
+
+.contact-form [placeholder="¿QUÉ NOS CUENTAS?"],
+#text-contact-form {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    font-family: $font-secondary;
+}
+
+.contact-form__name-email > p {
+
+    @include mq($bp-medium) {
+        //min width 768px
+        display: flex;
+        gap: 4rem;
+    }
+}

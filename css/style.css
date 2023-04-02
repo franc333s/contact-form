@@ -1,88 +1,106 @@
-@charset "UTF-8";
-.contact-form [type=email],
-.contact-form [type=text],
-#name-contact-form,
-#email-contact-form {
-  color: #0F0F0F;
-  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
-  background: none;
-  border: 2px solid #0F0F0F;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-radius: 0;
-  margin-top: 0rem;
-  margin-bottom: 2.8rem;
-  padding: 1.4rem 0;
-  width: 100%;
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-.contact-form [type=email]:focus,
-.contact-form [type=text]:focus,
-#name-contact-form:focus,
-#email-contact-form:focus {
-  background-color: transparent;
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
   color: #0F0F0F;
   font-family: "JetBrains Mono", "Courier New", Courier, monospace;
-  font-size: 1.6rem;
+  background-color: #FFFFFF;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.contact-form {
+  padding: 10rem 4rem;
+}
+
+.contact-form__name-email {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+}
+@media all and (min-width: 48rem) {
+  .contact-form__name-email {
+    -ms-grid-columns: 1fr 2rem 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+.contact-form [for=cf-name],
+.contact-form [for=cf-email],
+.contact-form [for=cf-text] {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.contact-form [name=cf-name],
+.contact-form [name=cf-email],
+.contact-form [name=cf-text] {
+  font: 2rem "JetBrains Mono", "Courier New", Courier, monospace;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #0F0F0F;
+  border-radius: 0;
+  height: 4rem;
+  resize: none;
+  padding: 2rem 0;
+  margin-bottom: 2.8rem;
+}
+.contact-form [name=cf-name]:focus,
+.contact-form [name=cf-email]:focus,
+.contact-form [name=cf-text]:focus {
+  color: #00FF40;
+  font-size: 2rem;
   outline: none;
 }
-.contact-form [type=email]::-webkit-input-placeholder, .contact-form [type=text]::-webkit-input-placeholder, #name-contact-form::-webkit-input-placeholder, #email-contact-form::-webkit-input-placeholder {
-  color: #0F0F0F;
-  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
-  font-size: 1.6rem;
+
+.contact-form [name=cf-text] {
+  height: 14rem;
+  resize: none;
 }
-.contact-form [type=email]::-moz-placeholder, .contact-form [type=text]::-moz-placeholder, #name-contact-form::-moz-placeholder, #email-contact-form::-moz-placeholder {
-  color: #0F0F0F;
+
+[type=submit] {
   font-family: "JetBrains Mono", "Courier New", Courier, monospace;
-  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+  background-color: transparent;
+  border: solid 0.2rem #0F0F0F;
+  padding: 1.2rem 0;
+  width: 100%;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-.contact-form [type=email]:-ms-input-placeholder, .contact-form [type=text]:-ms-input-placeholder, #name-contact-form:-ms-input-placeholder, #email-contact-form:-ms-input-placeholder {
-  color: #0F0F0F;
-  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
-  font-size: 1.6rem;
+[type=submit]:hover {
+  background-color: #0F0F0F;
+  color: #E5E1DB;
 }
-.contact-form [type=email]::-ms-input-placeholder, .contact-form [type=text]::-ms-input-placeholder, #name-contact-form::-ms-input-placeholder, #email-contact-form::-ms-input-placeholder {
-  color: #0F0F0F;
-  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
-  font-size: 1.6rem;
-}
-.contact-form [type=email]::placeholder,
-.contact-form [type=text]::placeholder,
-#name-contact-form::placeholder,
-#email-contact-form::placeholder {
-  color: #0F0F0F;
-  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
-  font-size: 1.6rem;
-}
-.contact-form [type=email]:-ms-input-placeholder,
-.contact-form [type=text]:-ms-input-placeholder,
-#name-contact-form:-ms-input-placeholder,
-#email-contact-form:-ms-input-placeholder {
-  color: #0F0F0F;
-  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
-  font-size: 1.6rem;
-}
-@media all and (min-width: 90rem) {
-  .contact-form [type=email],
-.contact-form [type=text],
-#name-contact-form,
-#email-contact-form {
-    padding-top: 4rem;
+@media all and (min-width: 37rem) {
+  [type=submit] {
+    width: auto;
+    padding: 1.2rem 4rem;
   }
 }
 
-.contact-form [placeholder="¿QUÉ NOS CUENTAS?"],
-#text-contact-form {
-  margin-top: 10rem;
-  margin-bottom: 10rem;
-  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
-}
-
-@media all and (min-width: 48rem) {
-  .contact-form__name-email > p {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 4rem;
-  }
+.btn--centered {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }

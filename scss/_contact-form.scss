@@ -5,67 +5,82 @@
 }
 
 
-
-// Contant form
-
-.contact-form [type="email"],
-.contact-form [type="text"],
-#name-contact-form,
-#email-contact-form {
-    color: $color-black;
-    font-family: $font-secondary;
-	background: none;
-    border: 2px solid $color-black;
-	border-top: none;
-    border-left: none;
-    border-right: none;
-    border-radius: 0;
-	// -webkit-appearance: none;
-	// -moz-appearance: none;
-	// appearance: none;
-    margin-top: 0rem;
-    margin-bottom: 2.8rem;
-    padding: 1.4rem 0;
-    width: 100%;
-
-    &:focus {
-        background-color: transparent;
-        color: $color-black;
-        font-family: $font-secondary;
-        font-size: $font-size-small;
-        outline: none;
-    }
-
-    &::placeholder {
-        color: $color-black;
-        font-family: $font-secondary;
-        font-size: $font-size-small;
-    }
-    &:-ms-input-placeholder {
-        color: $color-black;
-        font-family: $font-secondary;
-        font-size: $font-size-small;
-    }
-
-    @include mq($bp-large) {
-        //min width 1440px
-        padding-top: 4rem;
-
-    }
+.contact-form {
+    padding: 10rem 4rem;
 }
 
-.contact-form [placeholder="¿QUÉ NOS CUENTAS?"],
-#text-contact-form {
-    margin-top: 10rem;
-    margin-bottom: 10rem;
-    font-family: $font-secondary;
-}
-
-.contact-form__name-email > p {
+// Grid
+.contact-form__name-email {
+    display: grid;
+    grid-template-columns: 1fr;
 
     @include mq($bp-medium) {
-        //min width 768px
-        display: flex;
-        gap: 4rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
     }
+}
+
+//Labels
+.contact-form [for="cf-name"],
+.contact-form [for="cf-email"],
+.contact-form [for="cf-text"] {
+    font-size: $font-size-lowermedium;
+    text-transform: uppercase;
+
+}
+
+// Inputs
+.contact-form [name="cf-name"],
+.contact-form [name="cf-email"],
+.contact-form [name="cf-text"] {
+    font: $font-size-lowermedium $font-secondary;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid $color-black;;
+    border-radius: 0;
+    height: 4rem;
+    resize: none;
+    padding: 2rem 0;
+    margin-bottom: 2.8rem;
+
+    &:focus {
+        color: $color-green;
+        font-size: $font-size-lowermedium;
+        outline: none;
+    }
+}
+
+.contact-form [name="cf-text"] {
+    height: 14rem;
+    resize: none;
+}
+
+// Button
+[type="submit"] {
+    font-family: $font-secondary;
+    text-transform: uppercase;
+    font-size: $font-size-lowermedium;
+    background-color: transparent;
+    border: solid 0.2rem $color-black;
+    padding: 1.2rem 0;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $color-bg-black;
+      color: $color-beige;
+    }
+
+    @include mq($bp-lowermedium) {
+      width: auto;
+      padding: 1.2rem 4rem;
+    }
+}
+
+
+.btn--centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }

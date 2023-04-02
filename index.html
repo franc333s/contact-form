@@ -7,32 +7,34 @@
     <title>Contact Form</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
     <form class="contact-form" action="">
 
         <div class="contact-form__name-email">
-            <label for="contact-form__name">Nombre</label>
-            <input type="text" placeholder="NOMBRE" name="" id="name-contact-form">
-            <label for="contact-form__email">Email</label>
-            <input type="email" placeholder="EMAIL" name="" id="email-contact-form">
+
+            <div>
+                <label for="cf-name">Nombre</label>
+                <input type="text" placeholder="" name="cf-name" id="name-contact-form">
+            </div>
+
+            <div>
+                <label for="cf-email">Email</label>
+                <input type="email" placeholder="" name="cf-email" id="email-contact-form">
+            </div>
+
         </div>
 
-        <div>
-            <label for="contact-form__text">¿Qué nos cuentas?</label>
-            <input type="text" placeholder="¿QUÉ NOS CUENTAS?" name="" id="text-contact-form">
+        <div class="contact-form__text">
+            <label for="cf-text">¿Qué nos cuentas?</label>
+            <input type="text" placeholder="" name="cf-text" id="text-contact-form">
         </div>
 
-        <div class="">
-            <button type="submit" class="btn btn--color-black">Enviar</button>
+        <div class="btn--centered" >
+            <input type="submit" value="Enviar">
         </div>
 
-      </form>
-    
-
-
-
+    </form>
 
 </body>
 </html>
